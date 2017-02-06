@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <title>备忘录</title>
+    <script>
+        (function(){
+            var html = document.documentElement;
+            var htmlW = html.getBoundingClientRect().width;
+            html.style.fontSize = htmlW/15 + "px";
+        })()
+    </script>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div id="homePage">
+    <div id="homePageMaskLayer"></div>
+    <div id=timeOut>
+        <ul>
+            <li></li>
+            <li><input type="button" value="关闭"/></li>
+        </ul>
+    </div>
+    <audio id="song"></audio>
+    <header id="nav">
+        <ul>
+            <li id="life" class="active">
+                <span>生活</span>
+                <span></span>
+            </li>
+            <li id="work">
+                <span>工作</span>
+                <span></span>
+            </li>
+            <li id="study">
+                <span>学习</span>
+                <span></span>
+            </li>
+        </ul>
+    </header>
+    <section id="wrap">
+
+    </section>
+    <footer id="content">
+        +新建备忘录
+    </footer>
+</div>
+
+
+
+<div id="contentOptions">
+    <div id="contentNav">
+        <div id="prev"><</div>
+        <div class="new">新建备忘</div>
+        <div id="save">保存</div>
+    </div>
+    <ul id="option">
+        <div class="content">
+            <span>内容</span>
+            <div contenteditable="true"></div>
+        </div>
+        <li id="classify">
+            <span>分类</span>
+            <span>生活</span>
+            <span style="color: #999">></span>
+        </li>
+        <li id="color" style="border-bottom: none">颜色
+            <div>
+                <span style="color: red">红</span>
+                <span style="color: gold">黄</span>
+                <span style="color: blue">蓝</span>
+                <span style="color: green">绿</span>
+                <span style="color: purple;">紫</span>
+                <span style="color: lightgray" class="active">灰</span>
+            </div>
+        </li>
+    </ul>
+    <ul id="remind">
+        <li>
+            <span>提醒</span>
+            <span></span>
+        </li>
+        <li class="music">
+            <span>铃声</span>
+            <span>虫儿飞</span>
+            <span>></span>
+        </li>
+        <li class="repeat">
+            <span>重复</span>
+            <span>不重复</span>
+            <span>></span>
+        </li>
+        <li class="time">
+            <span>提醒时间</span>
+            <span></span>
+            <span>></span>
+        </li>
+    </ul>
+</div>
+<div id="maskLayer"></div>
+<ul id="choice">
+    <li>请选择分类</li>
+    <li class="life">
+        <span>生活</span>
+        <span class="select"></span>
+    </li>
+    <li class="work">
+        <span>工作</span>
+        <span></span>
+    </li>
+    <li class="study">
+        <span>学习</span>
+        <span></span>
+    </li>
+    <li>
+        <span class="cancel">取消</span>
+        <span class="OK">确定</span>
+    </li>
+</ul>
+<ul id="music">
+    <li>
+        <span>虫儿飞</span>
+        <span class="select"></span>
+    </li>
+    <li>
+        <span>铃儿响叮当</span>
+        <span></span>
+    </li>
+    <li>
+        <span>三只小熊</span>
+        <span></span>
+    </li>
+    <li>
+        <span class="cancel">取消</span>
+        <span class="OK">确定</span>
+    </li>
+</ul>
+<ul id="repeat">
+    <li>
+        <span>不重复</span>
+        <span class="select"></span>
+    </li>
+    <li>
+        <span>周一至周五</span>
+        <span></span>
+    </li>
+    <li>
+        <span>每天</span>
+        <span></span>
+    </li>
+    <li>
+        <span class="cancel">取消</span>
+        <span class="OK">确定</span>
+    </li>
+</ul>
+<div id="time" style="top:0.5rem">
+    <div id="days">
+        <div class="year">
+            <span></span>
+            <ul></ul>
+        </div>
+        <div class="month">
+            <span></span>
+            <ul></ul>
+        </div>
+        <div class="day">
+            <span></span>
+            <ul></ul>
+        </div>
+    </div>
+    <div id="times">
+        <div class="hour">
+            <span></span>
+            <ul></ul>
+        </div>
+        <div class="min">
+            <span></span>
+            <ul></ul>
+        </div>
+    </div>
+    <div id="result">
+        <ul>
+            <li>
+                <span class="cancel">取消</span>
+                <span class="OK">确定</span>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
