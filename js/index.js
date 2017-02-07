@@ -48,7 +48,7 @@ var minLis = getEle("li",allTimes[4]);
 var arrDate = [];
 var arrTimeLis = [yearLis,monthLis,dayLis,hourLis,minLis];
 var arrNum = ["20","12",monthDays(),"24","60"];
-var arrTime = ["年","月","日","时","分"];
+var arrTime = ["\u5e74","\u6708","\u65e5","\u65f6","\u5206"];
 var memo = [];
 var arrLife = [];
 var arrWork = [];
@@ -412,19 +412,19 @@ function setReminderTime(obj,obj3){
         var str = obj3[n].innerHTML;
         var last = str.charAt(str.length-1);
         switch(last){
-            case "年":
+            case "\u5e74":
                 arrDate[0] =str.slice(0,str.length-1);
                 break;
-            case "月":
+            case "\u6708":
                 arrDate[1] =str.slice(0,str.length-1);
                 break;
-            case "日":
+            case "\u65e5":
                 arrDate[2] =str.slice(0,str.length-1);
                 break;
-            case "时":
+            case "\u65f6":
                 arrDate[3] =str.slice(0,str.length-1);
                 break;
-            case "分":
+            case "\u5206":
                 arrDate[4] =str.slice(0,str.length-1);
         }
     }
