@@ -9,6 +9,7 @@ var lifeN = getEle("span",getEle("#live"));
 var workN = getEle("span",getEle("#work"));
 var studyN = getEle("span",getEle("#study"));
 var wrap = getEle("#wrap");
+var allMemoContent = getEle("li",wrap);
 var newMemo = getEle("#content");
 var oTime = getEle(".time")[0];
 var newMemoTime = getEle("span",oTime)[1];
@@ -74,6 +75,9 @@ if(memo != null){
     setInterval(function(){
         showTime(memo);
     },1000);
+    //删除备忘信息
+    var str = navLis[0].firstElementChild.innerHTML;
+    del(allMemoContent,memo,str);
 }
 
 //生成时间选择页内容
@@ -175,6 +179,13 @@ save.addEventListener("touchend",function(){
         //调用闹铃提醒
         showTime(memo);
     },1000);
+    //删除备忘信息
+    for(var i=0;i<navLis.length;i++){
+        if(navLis[i].onOff){
+            var str = navLis[i].firstElementChild.innerHTML; 
+            del(allMemoContent,memo,str);
+        }
+    }
 });
 
 
@@ -505,6 +516,8 @@ function getByClassify(obj,string){
 function classNmu(obj,obj2){
     if(obj.length != 0){
         obj2.innerHTML = obj.length;
+    }else{
+        obj2.style.display = "none";
     }
 }
 //首页头部类别点击事件函数
@@ -519,8 +532,30 @@ function navClick(obj,n){
         renderDate(arr[n],"arrStudy",arrStudy);
         navLis[n].className = "active";
         navLis[n].onOff = true;
+        var str = navLis[n].firstElementChild.innerHTML;
+        del(allMemoContent,memo,str);
     })
 }
+//删除
+function del(obj,obj2,str){
+    for(var i=0;i<obj.length;i++){
+        delContent(obj[i],obj2,str);
+    }
+}
+function delContent(obj,obj2,str){
+    obj.lastElementChild.addEventListener("touchend",function(){
+        var inner = obj.firstElementChild.firstElementChild.innerHTML;
+        for(var i=0;i<obj2.length;i++){
+            if(obj2[i].content == inner){              
+                obj2.splice(i,1);
+                localStorage.setItem("memo",JSON.stringify(obj2));
+                getChild(str,obj2);
+            }
+        }
+        del(allMemoContent,memo,str);
+    })
+}
+
 //数据渲染
 function renderDate(string1,string,arr){
     if(string1 == string){
