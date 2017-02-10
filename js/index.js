@@ -238,7 +238,8 @@ function staRender(obj,obj2,arr){
 function newM(){
     contentOptions.style.display = "block";
     document.body.style.transition = ".5s";
-    document.body.style.left = "-15rem";
+    var htmlW = document.documentElement.getBoundingClientRect().width;
+    document.body.style.left = -htmlW + "px";
     aColor[aColor.length-1].onOff = true;
     var date = new Date();
     var nowYear = date.getFullYear();
@@ -258,7 +259,7 @@ function newM(){
 //返回
 function goBack(){
     document.body.style.transition = ".5s";
-    document.body.style.left = "0";
+    document.body.style.left = "0px";
     setTimeout(function(){
         contentOptions.style.display = "none";
     },500);
