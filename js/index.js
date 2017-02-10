@@ -548,7 +548,7 @@ function delContent(obj,obj2,str){
             if(obj2[i].content == inner){              
                 obj2.splice(i,1);
                 localStorage.setItem("memo",JSON.stringify(obj2));
-                getChild(obj2,str);
+                getChild(str,obj2);
             }
         }
         del(allMemoContent,memo,str);
