@@ -571,11 +571,15 @@ function createMemo(obj){
         div.innerHTML = obj[i].content;
         var div1 = document.createElement("div");
         div1.innerHTML = "\u63d0\u9192\uff1a"+obj[i].ReminderTime[1]+"-"+obj[i].ReminderTime[2]+"\u0020"+obj[i].ReminderTime[3]+":"+obj[i].ReminderTime[4];
+        var div2 = document.createElement("div");
+        div2.appendChild(div);
+        div2.appendChild(div1); 
+        var div3 = document.createElement("div");
+        div3.className = "delete";
         var li = document.createElement("li");
         li.style.backgroundColor = obj[i].backgroundColor;
-        li.appendChild(div);
-        li.appendChild(div1);
-        li.appendChild(audio);
+        li.appendChild(div2);
+        li.appendChild(div3);
         var ul = document.createElement("ul");
         ul.appendChild(li);
         wrap.appendChild(ul);
