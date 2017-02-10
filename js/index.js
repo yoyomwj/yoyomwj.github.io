@@ -517,6 +517,8 @@ function getByClassify(obj,string){
 function classNmu(obj,obj2){
     if(obj.length != 0){
         obj2.innerHTML = obj.length;
+    }else{
+        obj2.innerHTML = "";
     }
 }
 //首页头部类别点击事件函数
