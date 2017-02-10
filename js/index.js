@@ -515,9 +515,9 @@ function getByClassify(obj,string){
 }
 //统计各类别备忘录数目
 function classNmu(obj,obj2){
-    if(obj.length > 0){
-        obj2.style.display = "block";
+    if(obj.length != 0){
         obj2.innerHTML = obj.length;
+        obj2.style.display = "block";
     }else{
         obj2.style.display = "none";
     }
