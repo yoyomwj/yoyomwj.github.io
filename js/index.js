@@ -515,11 +515,10 @@ function getByClassify(obj,string){
 }
 //统计各类别备忘录数目
 function classNmu(obj,obj2){
-    if(obj.length != 0){
-        obj2.innerHTML = obj.length;
-    }else{
+    if(obj.length == 0){
         obj2.innerHTML = "";
     }
+    obj2.innerHTML = obj.length;
 }
 //首页头部类别点击事件函数
 function navClick(obj,n){
